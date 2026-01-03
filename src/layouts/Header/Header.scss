@@ -1,0 +1,54 @@
+.header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  padding-block: fluid(22, 14);
+  border-bottom: var(--border-width-s) solid transparent;
+  animation-name: scrolling-header;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: 0 100px;
+
+  @keyframes scrolling-header {
+    to {
+      padding-block: 10px;
+      background-color: var(--color-black-500);
+      border-color: var(--color-black-400);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 16px;
+  }
+
+  &__menu {
+    padding: fluid-to-laptop(8, 6);
+    border: var(--border);
+    border-radius: var(--border-radius-l);
+
+    @include laptop {
+      border-radius: var(--border-radius-m);
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 6px;
+    }
+
+    &-link {
+      padding: fluid-to-laptop(12, 10) fluid-to-laptop(10, 8);
+      color: var(--color-gray-500);
+      border-radius: var(--border-radius-s);
+
+      &.is-active {
+        color: var(--color-black-200);
+        pointer-events: none;
+      }
+    }
+  }
+}

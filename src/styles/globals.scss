@@ -73,7 +73,7 @@ svg * {
   transition-duration: var(--transition-duration);
 }
 
-a {
+a, {
   color: inherit;
 
   @include hover {
